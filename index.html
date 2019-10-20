@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hello World</title>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="stylesheet" href="index.scss" />
+  </head>
+  <body>
+    <div class="type">
+      <h1>We don't need Moment.js just to display dates and times anymore</h1>
+      <p>
+        Moment.js is a great library, but it’s still something extra for your
+        users’ browsers to download, parse and run when they visit your site!
+        Then, once you’ve downloaded all the code for all its myriad features,
+        it’s often just turning an ISO date-time string from some API into the
+        right timezone and format for the user. Fortunately we can do that, and
+        do it better, with nothing but the features built in to modern browsers
+        and IE 11!
+      </p>
+      <h2 id="parsing-iso-dates">Parsing ISO dates</h2>
+      <p>
+        In modern browsers and IE 9+, the <code>Date</code> constructor (as well
+        as <code>Date.parse()</code>) supports
+        <a href="http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15"
+          >a restricted subset of the ISO date format</a
+        >, with separators being mandatory. (For instance,
+        <code>2017-04-26T19:30:00+09:30</code> works in browsers, but
+        <code>20170426T193000+0930</code> doesn’t.) In practice, this restricted
+        subset is exactly what most APIs will send, so the following Just Works:
+      </p>
+      <pre><code>const valueFromApi = "2017-04-26T19:30:00+09:30"
+const myDate = new Date(valueFromApi)
+</code></pre>
+      <h2 id="displaying-to-the-user">Displaying to the user</h2>
+      <p>
+        This is where Moment.js used to shine. Way back when, all we got from
+        the browser was
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toDateString"
+          ><code>Date.prototype.toDateString()</code></a
+        >
+        and friends, which returned “a human readable form in American English”.
+        In contrast, Moment.js has
+        <a href="https://momentjs.com/docs/#/displaying/format/"
+          >a comprehensive format string syntax</a
+        >
+        that lets us mix and match date components whichever way we want. The
+        built in <code>Date</code> object still doesn’t have anything like that,
+        but modern browsers and IE 11 have something arguably better:
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat"
+          ><code>Intl.DateTimeFormat</code></a
+        >. Here’s an example:
+      </p>
+      <pre><code>const longFmt = new Intl.DateTimeFormat(undefined, {
+weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+hour: 'numeric', minute: 'numeric', timeZoneName: 'long'})
+const shortFmt = new Intl.DateTimeFormat(undefined, {
+year: 'numeric', month: 'numeric', day: 'numeric',
+hour: 'numeric', minute: 'numeric'})
+console.log(longFmt.format(myDate))
+// Wednesday, 26 April 2017, 7:30 pm Australian Central Standard Time
+// (on my system, yours will probably be different)
+console.log(shortFmt.format(myDate))
+// 26/04/2017, 7:30 pm
+</code></pre>
+      <p>
+        This lets you precisely control how dates are formatted—4- or 2-digit
+        years, text or numeric months, omitting components, and so on—<strong
+          >but still use the component ordering and separators your users are
+          expecting</strong
+        >, depending on the locale they chose when they first set up their
+        computer or phone! (You can also specify a specific locale string like
+        <code>'en-AU'</code>, or an IANA timezone to convert to like
+        <code>'Australia/Adelaide'</code>, if you’re confident you know what the
+        user wants to see better than the browser does.)
+      </p>
+      <p>
+        By changing your date display code to use <code>Intl</code> instead of
+        Moment.js, you’re not only saving a few kilobytes of JS, but you’ll also
+        show your users dates that are easier for them to read, wherever they
+        are in the world.
+      </p>
+    </div>
+  </body>
+</html>
