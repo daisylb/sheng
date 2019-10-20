@@ -1,16 +1,16 @@
 @import "reset-css/reset.css";
 
-.type {
-  --scale-ratio: calc(4 / 3);
-  --base-font-size: 20px;
-  --heading-font-family: sans-serif;
-  --heading-font-weight: bold;
-  --body-font-family: sans-serif;
-  --body-font-weight: 400;
-  --body-bold-font-weight: 600;
-  --paragraph-spacing: 1;
-  --code-font-family: monospace;
-
+@mixin type(
+  $scale-ratio: 4/3,
+  $base-font-size: 20px,
+  $heading-font-family: sans-serif,
+  $heading-font-weight: bold,
+  $body-font-family: sans-serif,
+  $body-font-weight: normal,
+  $body-bold-font-weight: bold,
+  $paragraph-spacing: 1,
+  $code-font-family: monospace
+) {
   *,
   *:before,
   *:after {
@@ -20,9 +20,9 @@
   width: 33em;
   margin: 0 auto;
 
-  font-size: var(--base-font-size);
-  font-family: var(--body-font-family);
-  font-weight: var(--body-font-weight);
+  font-size: $base-font-size;
+  font-family: $body-font-family;
+  font-weight: $body-font-weight;
   line-height: 1.5;
   overflow-wrap: break-word;
   font-kerning: normal;
@@ -32,7 +32,7 @@
   strong,
   dt,
   th {
-    font-weight: var(--body-bold-font-weight);
+    font-weight: $body-bold-font-weight;
   }
 
   h1,
@@ -58,14 +58,15 @@
   img,
   hr,
   address {
-    margin-bottom: calc(var(--paragraph-spacing) * var(--base-font-size));
+    margin-bottom: $paragraph-spacing * $base-font-size;
   }
 
   hr {
     background: currentColor;
     border: none;
     height: 1px;
-    margin-bottom: calc(var(--paragraph-spacing) * var(--base-font-size) - 1px);
+    margin-bottom: $paragraph-spacing * $base-font-size - 1px;
+    opacity: 0.6;
   }
 
   ol,
@@ -80,25 +81,29 @@
   h4,
   h5,
   h6 {
-    font-family: var(--heading-font-family);
-    font-weight: var(--heading-font-weight);
+    font-family: $heading-font-family;
+    font-weight: $heading-font-weight;
     margin-top: 2em;
   }
   h1 {
-    font-size: calc(
-      var(--scale-ratio) * var(--scale-ratio) * var(--base-font-size)
-    );
+    font-size: $scale-ratio * $scale-ratio * $base-font-size;
     line-height: 1.125;
   }
-
   h2 {
-    font-size: calc(var(--scale-ratio) * var(--base-font-size));
+    font-size: $scale-ratio * $base-font-size;
     line-height: 1.25;
+  }
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: $base-font-size;
+    line-height: 1.5;
   }
 
   code,
   pre {
-    font-family: var(--code-font-family);
+    font-family: $code-font-family;
     font-size: 0.9em;
   }
 }
