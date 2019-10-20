@@ -62,15 +62,16 @@
   }
 
   hr {
-      background: currentColor;
-      border: none;
-      height: 1px;
-      margin-bottom: calc(var(--paragraph-spacing) * var(--base-font-size) - 1px);
+    background: currentColor;
+    border: none;
+    height: 1px;
+    margin-bottom: calc(var(--paragraph-spacing) * var(--base-font-size) - 1px);
   }
 
-  ol, ul {
-      list-style-position: outside;
-      list-style-image: none;
+  ol,
+  ul {
+    list-style-position: outside;
+    list-style-image: none;
   }
 
   h1,
@@ -95,8 +96,9 @@
     line-height: 1.25;
   }
 
-  code, pre {
-      font-family: var(--code-font-family);
-      font-size: 0.9em;
+  code,
+  pre {
+    font-family: var(--code-font-family);
+    font-size: 0.9em;
   }
 }

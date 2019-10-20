@@ -1,11 +1,16 @@
 @import "./type.scss";
 
 .type {
-    --heading-font-family: Inter, sans-serif;
-    --body-font-family: Inter, sans-serif;
-    color: hsla(0, 0, 0, 0.8);
+  --heading-font-family: Inter, sans-serif;
+  --body-font-family: Inter, sans-serif;
+  color: hsla(0, 0, 0, 0.8);
 
-    h1, h2, h3, h4, h5, h6 {
-        color: hsla(0, 0, 0, 0.9);
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: hsla(0, 0, 0, 0.9);
+  }
 }
