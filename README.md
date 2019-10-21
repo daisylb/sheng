@@ -26,7 +26,7 @@ You can either use Sheng as a Sass library, or include its CSS directly if you'r
 The CSS version is always applied to the `.type` selector. You can override the defaults using CSS Variables.
 
 ```css
-@import "sheng/sheng-compiled.css";
+@import "https://unpkg.com/sheng@0.1.0/sheng-compiled.css";
 .sheng {
   --body-font-family: Helvetica, sans-serif;
 }

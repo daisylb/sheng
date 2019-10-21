@@ -5,7 +5,8 @@
   "main": "sheng.scss",
   "scripts": {
     "start": "parcel index.pug",
-    "prepack": "sass sheng-compiled.scss > sheng-compiled.css"
+    "prepack": "sass sheng-compiled.scss > sheng-compiled.css",
+    "version": "node scripts/bump-version.js && git add README.md"
   },
   "author": "Leigh Brenecki <leigh@brenecki.id.au>",
   "license": "CC0",
