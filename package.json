@@ -1,14 +1,14 @@
 {
-  "name": "type",
+  "name": "sheng",
   "version": "0.1.0",
   "description": "",
-  "main": "index.html",
+  "main": "sheng.scss",
   "scripts": {
     "start": "parcel index.pug",
-    "prepack": "sass type-compiled.scss > type-compiled.css"
+    "prepack": "sass sheng-compiled.scss > sheng-compiled.css"
   },
-  "author": "",
-  "license": "UNKNOWN",
+  "author": "Leigh Brenecki <leigh@brenecki.id.au>",
+  "license": "CC0",
   "dependencies": {
     "reset-css": "^5.0.0"
   },

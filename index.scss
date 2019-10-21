@@ -1,7 +1,7 @@
-@import "./type.scss";
+@import "./sheng.scss";
 
 .type {
-  @include type(
+  @include sheng(
     $heading-font-family: (
       Inter,
       sans-serif,

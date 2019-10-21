@@ -1,7 +1,7 @@
-@import "./type.scss";
+@import "./sheng.scss";
 
-.type {
-  @include type(
+.sheng {
+  @include sheng(
     $heading-font-family: var(--heading-font-family),
     $heading-font-weight: var(--heading-font-weight),
     $body-font-family: var(--body-font-family),

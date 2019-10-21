@@ -1,21 +1,23 @@
-# type
+# Sheng
 
-A Sass and CSS library for laying out type on the Web, which is opinionated about sizing and spacing, but leaves fonts and colours up to you.
+Sheng is a Sass and CSS library for laying out type on the Web, which is opinionated about sizing and spacing, but leaves fonts and colours up to you.
 
-It is based on the same concept as [typography.js][], but is not a pixel-perfect JS-free drop-in, instead taking a few different opinions in some places.
+It is named after Bì Shēng, the inventor of movable type.
+
+It is intended to be a JS-free alternative to [typography.js][], but is not a pixel-perfect drop-in, instead taking a few different opinions in some places.
 
 [typography.js]: http://kyleamathews.github.io/typography.js/
 
 ## Usage
 
-You can either use type as a Sass library, or include its CSS directly if you're not using Sass.
+You can either use Sheng as a Sass library, or include its CSS directly if you're not using Sass.
 
 ### Sass
 
 ```scss
-@import "type/type.scss";
+@import "sheng/sheng.scss";
 .content {
-  @include type();
+  @include sheng();
 }
 ```
 
@@ -24,7 +26,8 @@ You can either use type as a Sass library, or include its CSS directly if you're
 The CSS version is always applied to the `.type` selector. You can override the defaults using CSS Variables.
 
 ```css
-@import "type/type-compiled.css" .type {
+@import "sheng/sheng-compiled.css";
+.sheng {
   --body-font-family: Helvetica, sans-serif;
 }
 ```
