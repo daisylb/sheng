@@ -18,3 +18,13 @@ You can either use type as a Sass library, or include its CSS directly if you're
   @include type();
 }
 ```
+
+### CSS
+
+The CSS version is always applied to the `.type` selector. You can override the defaults using CSS Variables.
+
+```css
+@import "type/type-compiled.css" .type {
+  --body-font-family: Helvetica, sans-serif;
+}
+```

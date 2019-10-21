@@ -1,0 +1,19 @@
+@import "./type.scss";
+
+.type {
+  @include type(
+    $heading-font-family: var(--heading-font-family),
+    $heading-font-weight: var(--heading-font-weight),
+    $body-font-family: var(--body-font-family),
+    $body-font-weight: var(--body-font-weight),
+    $body-bold-font-weight: var(--body-bold-font-weight),
+    $code-font-family: var(--code-font-family)
+  );
+
+  --heading-font-family: sans-serif;
+  --heading-font-weight: bold;
+  --body-font-family: sans-serif;
+  --body-font-weight: normal;
+  --body-bold-font-weight: bold;
+  --code-font-family: monospace;
+}
