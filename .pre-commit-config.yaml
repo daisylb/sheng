@@ -2,3 +2,5 @@
   rev: "1.18.2"
   hooks:
     - id: prettier
+      additional_dependencies:
+        - "@prettier/plugin-pug@1.0.5"
