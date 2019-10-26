@@ -3,7 +3,12 @@ html(lang='en')
   head
     title Sheng
     link(rel='stylesheet', href="https://rsms.me/inter/inter.css")
-    link(rel='stylesheet', href="index.scss")
+    link(rel='stylesheet', href="index.scss", id='index-css')
+    script(src="./switcher.ts", async=true)
   body
     div.type
+      div
+        a(href='#' class='toggle', data-index=1) Enable 
+        a(href='#' class='toggle', data-index=0) Disable 
+        a(href='#' class='toggle') Nothing 
       include:markdown-it README.md

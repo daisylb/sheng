@@ -17,6 +17,7 @@
     "jstransformer-markdown-it": "^2.1.0",
     "parcel-bundler": "^1.12.4",
     "pug": "^2.0.4",
-    "sass": "^1.23.0"
+    "sass": "^1.23.0",
+    "typescript": "^3.6.4"
   }
 }
