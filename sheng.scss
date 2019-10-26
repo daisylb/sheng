@@ -1,11 +1,9 @@
-@import "reset-css/reset.css";
-
 @mixin sheng(
   $scale-ratio: 4/3,
   $base-font-size: 20px,
-  $heading-font-family: sans-serif,
+  $heading-font-family: null,
   $heading-font-weight: bold,
-  $body-font-family: sans-serif,
+  $body-font-family: null,
   $body-font-weight: normal,
   $body-bold-font-weight: bold,
   $paragraph-spacing: 1,
@@ -16,9 +14,6 @@
   *:after {
     box-sizing: border-box;
   }
-
-  width: 33em;
-  margin: 0 auto;
 
   font-size: $base-font-size;
   font-family: $body-font-family;

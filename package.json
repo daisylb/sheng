@@ -4,7 +4,8 @@
   "description": "",
   "main": "sheng.scss",
   "scripts": {
-    "start": "parcel index.pug",
+    "start": "parcel website/index.pug",
+    "build": "parcel build website/index.pug",
     "prepack": "sass sheng-compiled.scss > sheng-compiled.css",
     "version": "node scripts/bump-version.js && git add README.md"
   },

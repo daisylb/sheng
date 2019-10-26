@@ -1,0 +1,7 @@
+[build]
+publish = "dist/"
+command = """
+restore_home_cache ".pnpm-store" "pnpm store" &&
+npx pnpm install &&
+npx pnpm run build
+"""

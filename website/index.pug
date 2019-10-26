@@ -1,0 +1,14 @@
+doctype html
+html(lang='en')
+  head
+    title Sheng
+    link(rel='stylesheet', href="https://rsms.me/inter/inter.css")
+    link(rel='stylesheet', href="./index.scss", id='index-css')
+    script(src="./switcher.ts", async=true)
+  body(class='sheng-with-fonts')
+    div.type
+      div
+        a(href='#' class='toggle', data-class='') No Sheng 
+        a(href='#' class='toggle', data-class='sheng-no-fonts') Sheng default 
+        a(href='#' class='toggle', data-class='sheng-with-fonts') With fonts 
+      include:markdown-it ../README.md

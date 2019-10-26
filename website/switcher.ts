@@ -6,13 +6,11 @@
   const toggles = document.querySelectorAll(".toggle") as NodeListOf<
     HTMLElement
   >
-  const index = document.getElementById("index-css") as HTMLLinkElement
+  const body = document.body as HTMLBodyElement
   for (const toggle of toggles) {
     toggle.addEventListener("click", function(e) {
       e.preventDefault()
-      console.log(toggle.dataset.index)
-      if (typeof toggle.dataset.index !== "undefined")
-        index.disabled = !(toggle.dataset.index === "1")
+      body.className = toggle.dataset.class
     })
   }
 })
