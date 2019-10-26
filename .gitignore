@@ -1,3 +1,4 @@
 dist
 *-compiled.css
 *.tgz
+pnpm-debug.log
