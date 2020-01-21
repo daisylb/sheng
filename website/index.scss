@@ -4,29 +4,32 @@
   width: 33em;
   margin: 0 auto;
 
-  .sheng-no-fonts & {
+  .sheng-no-fonts &,
+  .sheng-with-fonts & {
     @include sheng();
   }
   .sheng-with-fonts & {
-    @include sheng(
-      $heading-font-family: (
-        Inter,
-        sans-serif,
-      ),
-      $body-font-family: (
-        Inter,
-        sans-serif,
-      )
-    );
-    color: hsla(0, 0, 0, 0.8);
+    @include sheng();
+  }
+}
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: hsla(0, 0, 0, 0.9);
-    }
+.sheng-with-fonts {
+  font-family: Inter, sans-serif;
+  color: hsla(0, 0, 0, 0.8);
+
+  %sheng-heading {
+    color: hsla(0, 0, 0, 0.9);
+  }
+
+  %sheng-code {
+    background-color: hsla(0, 0, 0, 0.025);
+    border-radius: 3px;
+    border: 1px solid hsla(0, 0, 0, 0.2)
+  }
+  pre {
+    padding: 6px;
+  }
+  %sheng-inline-code {
+    padding: 3px 6px;
   }
 }

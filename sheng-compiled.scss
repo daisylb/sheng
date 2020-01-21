@@ -1,14 +1,23 @@
 @import "./sheng.scss";
 
 .sheng {
-  @include sheng(
-    $heading-font-family: var(--heading-font-family),
-    $heading-font-weight: var(--heading-font-weight),
-    $body-font-family: var(--body-font-family),
-    $body-font-weight: var(--body-font-weight),
-    $body-bold-font-weight: var(--body-bold-font-weight),
-    $code-font-family: var(--code-font-family)
-  );
+  @include sheng();
+
+  font-family: var(--body-font-family);
+  font-weight: var(--body-font-weight);
+
+  %sheng-bold {
+    font-weight: var(--body-bold-font-weight);
+  }
+
+  %sheng-heading {
+    font-family: var(--heading-font-family);
+    font-weight: var(--heading-font-weight);
+  }
+
+  %sheng-code {
+    font-family: var(--code-font-family);
+  }
 
   --heading-font-family: sans-serif;
   --heading-font-weight: bold;

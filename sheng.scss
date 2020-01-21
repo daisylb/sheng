@@ -1,13 +1,7 @@
 @mixin sheng(
   $scale-ratio: 4/3,
   $base-font-size: 20px,
-  $heading-font-family: null,
-  $heading-font-weight: bold,
-  $body-font-family: null,
-  $body-font-weight: normal,
-  $body-bold-font-weight: bold,
   $paragraph-spacing: 1,
-  $code-font-family: monospace
 ) {
   *,
   *:before,
@@ -16,8 +10,6 @@
   }
 
   font-size: $base-font-size;
-  font-family: $body-font-family;
-  font-weight: $body-font-weight;
   line-height: 1.5;
   overflow-wrap: break-word;
   font-kerning: normal;
@@ -27,7 +19,8 @@
   strong,
   dt,
   th {
-    font-weight: $body-bold-font-weight;
+    font-weight: bold;
+    @extend %sheng-bold !optional;
   }
 
   h1,
@@ -76,9 +69,9 @@
   h4,
   h5,
   h6 {
-    font-family: $heading-font-family;
-    font-weight: $heading-font-weight;
+    font-weight: bold;
     margin-top: 2em;
+    @extend %sheng-heading !optional;
   }
   h1 {
     font-size: $scale-ratio * $scale-ratio * $base-font-size;
@@ -96,9 +89,13 @@
     line-height: 1.5;
   }
 
-  code,
+  :not(pre) > code,
   pre {
-    font-family: $code-font-family;
+    font-family: monospace;
     font-size: 0.9em;
+    @extend %sheng-code !optional;
+  }
+  :not(pre) > code {
+    @extend %sheng-inline-code !optional;
   }
 }
