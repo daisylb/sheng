@@ -54,7 +54,6 @@
     border: none;
     height: 1px;
     margin-bottom: $paragraph-spacing * $base-font-size - 1px;
-    opacity: 0.6;
   }
 
   ol,
@@ -97,5 +96,14 @@
   }
   :not(pre) > code {
     @extend %sheng-inline-code !optional;
+  }
+
+  ul {
+    list-style-type: disc;
+    margin-left: 1em;
+  }
+  ol {
+    list-style-type: numeric;
+    margin-left: 1em;
   }
 }
