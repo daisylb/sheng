@@ -10,7 +10,7 @@
     "version": "node scripts/bump-version.js && git add README.md"
   },
   "author": "Leigh Brenecki <leigh@brenecki.id.au>",
-  "license": "CC0",
+  "license": "CC0-1.0",
   "dependencies": {
     "reset-css": "^5.0.0"
   },
