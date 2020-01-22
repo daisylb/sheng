@@ -48,7 +48,7 @@ The CSS version is always applied to the `.type` selector. You can override some
 - `--code-font-family`: Font family for code and code blocks.
 
 ```css
-@import "https://unpkg.com/sheng@0.1.0/sheng-compiled.css";
+@import "https://unpkg.com/sheng@1.0.0/sheng-compiled.css";
 .sheng {
   --body-font-family: Helvetica, sans-serif;
 }
